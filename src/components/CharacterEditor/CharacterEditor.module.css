@@ -1,30 +1,70 @@
 .characterEditor {
-  padding-top: 128px;
-  padding-bottom: 64px;
+    padding-top: 128px;
+    padding-bottom: 64px;
 }
 
 .maxWidthWrapper {
 }
 
 .header {
-  padding-bottom: 64px;
+    padding-bottom: 64px;
+    width: 65%;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 16px;
-  letter-spacing: -0.5px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
 }
 
 .description {
-  font-size: 1.25rem;
-  margin: 0;
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 .characterWrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    min-height: 500px;
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .controlColumn {
+    width: 50%;
+    isolation: isolate;
+}
+
+.perspectiveBar {
+    background-color: hsl(195deg 20% 86%);
+    height: 40%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .header {
+        display: none;
+    }
+    .controlColumn {
+        width: 100%;
+        white-space: nowrap;
+        overflow-x: auto;
+        position: absolute;
+        bottom: 128px;
+        left: 0;
+    }
+    .controlColumn div {
+        display: inline-block;
+    }
+
+    .controlColumn div:not(:first-child) {
+        margin-left: 16px;
+    }
 }
